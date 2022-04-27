@@ -62,6 +62,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="39dp"
                 android:layout_marginLeft="25dp"
+                android:padding="10dp"
                 android:background="@drawable/round_corner"
                 android:drawableRight="@drawable/ic_vardas"
                 android:fontFamily="@font/poppinsmedium"
@@ -89,6 +90,7 @@
                 android:background="@drawable/round_corner"
                 android:layout_marginLeft="25dp"
                 android:layout_height="39dp"
+                android:padding="10dp"
                 tools:targetApi="jelly_bean" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -113,6 +115,7 @@
                 android:background="@drawable/round_corner"
                 android:layout_marginLeft="25dp"
                 android:layout_height="39dp"
+                android:padding="10dp"
                 tools:targetApi="jelly_bean" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -131,13 +134,14 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/password"
                 android:layout_width="match_parent"
-
                 android:drawableRight="@drawable/ic_passimg"
                 android:fontFamily="@font/poppinsmedium"
                 android:background="@drawable/round_corner"
                 android:inputType="textPassword"
                 android:layout_marginLeft="25dp"
                 android:layout_height="39dp"
+                android:padding="10dp
+"
                 tools:targetApi="jelly_bean" />
         </com.google.android.material.textfield.TextInputLayout>
 
