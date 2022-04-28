@@ -15,7 +15,7 @@ import com.journeyapps.barcodescanner.CaptureActivity;
 import com.journeyapps.barcodescanner.ScanContract;
 import com.journeyapps.barcodescanner.ScanOptions;
 
-public class ExhibitScan extends AppCompatActivity {
+public class ExhibitScan extends AppCompatActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
