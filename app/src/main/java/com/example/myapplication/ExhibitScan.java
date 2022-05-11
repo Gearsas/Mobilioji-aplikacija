@@ -23,13 +23,18 @@ import com.journeyapps.barcodescanner.CaptureActivity;
 import com.journeyapps.barcodescanner.ScanContract;
 import com.journeyapps.barcodescanner.ScanOptions;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class ExhibitScan extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     private DrawerLayout drawer;
-
+    TextView txt;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle(" ");
         setContentView(R.layout.activity_exhibit_scan);
         Toolbar toolbar = findViewById(R.id.toolbar1);
         setSupportActionBar(toolbar);
@@ -43,7 +48,13 @@ public class ExhibitScan extends AppCompatActivity implements NavigationView.OnN
         toggle.syncState();
         TextView museumName = findViewById(R.id.textView6);
         museumName.setText(getIntent().getStringExtra("museum"));
-        //scanCode();
+
+        scanCode();
+
+        // TODO: priskiria kintamajam textview7
+        txt = findViewById(R.id.textView7);
+
+
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -65,19 +76,33 @@ public class ExhibitScan extends AppCompatActivity implements NavigationView.OnN
     ActivityResultLauncher<ScanOptions> barLauncher = registerForActivityResult(new ScanContract(), result -> {
         if (result.getContents() != null){
             AlertDialog.Builder builder = new AlertDialog.Builder(ExhibitScan.this);
-            builder.setTitle("Result");
-            builder.setMessage(result.getContents());
-            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialogInterface, int i) {
-                    dialogInterface.dismiss();
-                    startActivity(new Intent(ExhibitScan.this, MainPage.class));
-                   // getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new GaleryFragment()).commit();
-                }
-            }).show();
+            sendrequest(result.getContents());
         }
     });
 
+    public void sendrequest(String data){
+        Call<dataResponse> loginResponseCall =  ApiClient.getUserService().getData(data);
+        loginResponseCall.enqueue(new Callback<dataResponse>() {
+            @Override
+            public void onResponse(Call<dataResponse> call, Response<dataResponse> response) {
+                if(response.isSuccessful()) {
+                    dataResponse loginResponse = response.body();
+
+                    // TODO: sitoje vietoje gaunami rezultatai apie eksponata. cia yra pavyzdinis
+                    //  kad nustato textview7 teksta getpav gaus pavadinima eksponato, data tai aprasyma,
+                    //  o extra idejau kad papildomai jeigu ka sugalvosim
+                    //  pavyzdinis variantas https://www.the-qrcode-generator.com/ free text 1 parasykit ir nuskaitykit
+
+                    txt.setText(loginResponse.getPav().toString());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<dataResponse> call, Throwable t) {
+
+            }
+        });
+    }
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
@@ -90,8 +115,7 @@ public class ExhibitScan extends AppCompatActivity implements NavigationView.OnN
                 startActivity(new Intent(ExhibitScan.this, ExhibitScan.class));
                 break;
             case R.id.nav_galery:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new GaleryFragment()).commit();
+                startActivity(new Intent(ExhibitScan.this, ExhibitsList.class));
                 break;
         }
         drawer.closeDrawer(GravityCompat.START);

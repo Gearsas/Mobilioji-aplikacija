@@ -17,4 +17,6 @@ public interface myapi {
     @POST("login.php")
     Call<LoginResponse> userLogin(@Query("username") String username, @Query("password") String password);
 
+    @POST("getdata.php")
+    Call<dataResponse> getData(@Query("request") String request);
 }

@@ -53,7 +53,9 @@ public class MainPage extends AppCompatActivity implements OnMapReadyCallback, N
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTitle("Muzz");
+        setTitle(" ");
+
+
         setContentView(R.layout.activity_mainpage);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -132,8 +134,7 @@ public class MainPage extends AppCompatActivity implements OnMapReadyCallback, N
                 startActivity(new Intent(MainPage.this, ExhibitScan.class));
                 break;
             case R.id.nav_galery:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new GaleryFragment()).commit();
+                startActivity(new Intent(MainPage.this, ExhibitsList.class));
                 break;
         }
         drawer.closeDrawer(GravityCompat.START);

@@ -96,7 +96,7 @@ public class Login extends AppCompatActivity {
 
                                 startActivity(new Intent(Login.this, MainPage.class).putExtra("data",loginResponse.getResponse()));
                             }
-                        },700);
+                        },500);
                     }
 
 
