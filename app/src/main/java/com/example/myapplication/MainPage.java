@@ -7,8 +7,11 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
@@ -43,7 +46,6 @@ public class MainPage extends AppCompatActivity implements OnMapReadyCallback, N
 
     GoogleMap mGooglemap;
     FloatingActionButton fab;
-    boolean check = false;
     SupportMapFragment supportMapFragment;
     FusedLocationProviderClient client ;
     private DrawerLayout drawer;
@@ -62,12 +64,11 @@ public class MainPage extends AppCompatActivity implements OnMapReadyCallback, N
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         toggle.syncState();
-        checkMyPermision();
-        if (check) {
+
             SupportMapFragment supportMapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
             supportMapFragment.getMapAsync((OnMapReadyCallback) this);
             client = LocationServices.getFusedLocationProviderClient(this);
-        }
+
 
 
     }
@@ -79,31 +80,6 @@ public class MainPage extends AppCompatActivity implements OnMapReadyCallback, N
         else{
             super.onBackPressed();
         }
-    }
-
-
-    private void checkMyPermision() {
-        Dexter.withContext(this).withPermission(Manifest.permission.ACCESS_FINE_LOCATION).withListener(new PermissionListener() {
-            @Override
-            public void onPermissionGranted(PermissionGrantedResponse permissionGrantedResponse) {
-                // Toast.makeText(MainActivity.this, "Permission granted", Toast.LENGTH_SHORT).show();
-                check = true;
-            }
-
-            @Override
-            public void onPermissionDenied(PermissionDeniedResponse permissionDeniedResponse) {
-                Intent intent = new Intent();
-                intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
-                Uri uri = Uri.fromParts("package", getPackageName(), "");
-                intent.setData(uri);
-                startActivity(intent);
-            }
-
-            @Override
-            public void onPermissionRationaleShouldBeShown(PermissionRequest permissionRequest, PermissionToken permissionToken) {
-                permissionToken.continuePermissionRequest();
-            }
-        }).check();
     }
 
     @Override
@@ -123,7 +99,6 @@ public class MainPage extends AppCompatActivity implements OnMapReadyCallback, N
         mGooglemap.setMyLocationEnabled(true);
 
         MarkerOptions markerOptions = new MarkerOptions();
-        // LatLng latLng = new LatLng(location.getLatitude())
         Task<Location> task = client.getLastLocation();
         task.addOnSuccessListener(new OnSuccessListener<Location>() {
             @Override
@@ -148,12 +123,13 @@ public class MainPage extends AppCompatActivity implements OnMapReadyCallback, N
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.nav_map:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new MapFragment()).commit();
+                for (Fragment fragment : getSupportFragmentManager().getFragments()){
+                    getSupportFragmentManager().beginTransaction().remove(fragment).commit();
+                    startActivity(new Intent(MainPage.this, MainPage.class));
+                }
                 break;
             case R.id.nav_qr:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new ScanFragment()).commit();
+                startActivity(new Intent(MainPage.this, ExhibitScan.class));
                 break;
             case R.id.nav_galery:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
@@ -163,4 +139,9 @@ public class MainPage extends AppCompatActivity implements OnMapReadyCallback, N
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+    @Override
+    public void onBackPressed(){
+       // super.onBackPressed();
+    }
+
 }
