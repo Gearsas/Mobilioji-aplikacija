@@ -62,10 +62,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="39dp"
                 android:layout_marginLeft="25dp"
-                android:padding="10dp"
                 android:background="@drawable/round_corner"
                 android:drawableRight="@drawable/ic_vardas"
                 android:fontFamily="@font/poppinsmedium"
+                android:padding="10dp"
                 tools:targetApi="jelly_bean" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -85,11 +85,11 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/email"
                 android:layout_width="match_parent"
+                android:layout_height="39dp"
+                android:layout_marginLeft="25dp"
+                android:background="@drawable/round_corner"
                 android:drawableRight="@drawable/ic_email"
                 android:fontFamily="@font/poppinsmedium"
-                android:background="@drawable/round_corner"
-                android:layout_marginLeft="25dp"
-                android:layout_height="39dp"
                 android:padding="10dp"
                 tools:targetApi="jelly_bean" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -110,11 +110,11 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/username"
                 android:layout_width="match_parent"
+                android:layout_height="39dp"
+                android:layout_marginLeft="25dp"
+                android:background="@drawable/round_corner"
                 android:drawableRight="@drawable/ic_userimg"
                 android:fontFamily="@font/poppinsmedium"
-                android:background="@drawable/round_corner"
-                android:layout_marginLeft="25dp"
-                android:layout_height="39dp"
                 android:padding="10dp"
                 tools:targetApi="jelly_bean" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -134,12 +134,12 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/password"
                 android:layout_width="match_parent"
+                android:layout_height="39dp"
+                android:layout_marginLeft="25dp"
+                android:background="@drawable/round_corner"
                 android:drawableRight="@drawable/ic_passimg"
                 android:fontFamily="@font/poppinsmedium"
-                android:background="@drawable/round_corner"
                 android:inputType="textPassword"
-                android:layout_marginLeft="25dp"
-                android:layout_height="39dp"
                 android:padding="10dp
 "
                 tools:targetApi="jelly_bean" />
@@ -160,11 +160,11 @@
             android:layout_width="200dp"
             android:layout_height="50dp"
             android:layout_marginTop="36dp"
+            android:background="@drawable/bt_corner"
             android:fontFamily="@font/acme"
             android:paddingTop="8dp"
             android:paddingBottom="8dp"
             android:text="Registruotis"
-            android:background="@drawable/bt_corner"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

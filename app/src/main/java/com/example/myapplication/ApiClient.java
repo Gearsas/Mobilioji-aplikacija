@@ -10,7 +10,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiClient {
 
-    private static Retrofit getRetrofit(){
+    private static Retrofit getRetrofit() {
 
         HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor();
         httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
@@ -30,7 +30,7 @@ public class ApiClient {
     }
 
 
-    public static myapi getUserService(){
+    public static myapi getUserService() {
         myapi userService = getRetrofit().create(myapi.class);
 
         return userService;
