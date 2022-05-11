@@ -99,6 +99,10 @@ public class MainPage extends AppCompatActivity implements OnMapReadyCallback, N
             case R.id.nav_galery:
                 startActivity(new Intent(MainPage.this, ExhibitsList.class));
                 break;
+            case R.id.nav_about_us:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new AboutUsFragment()).commit();
+                break;
         }
         drawer.closeDrawer(GravityCompat.START);
         return true;
