@@ -5,4 +5,6 @@
     <string name="login">Prisijungimas</string>
     <string name="vartotojo_vardas">Vartotojo vardas</string>
     <string name="slaptazodis">Slaptažodis</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 </resources>

@@ -6,46 +6,64 @@
     android:layout_height="match_parent"
     tools:context=".SignUp">
 
+    <View
+        android:id="@+id/view2"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:background="#C2F5C4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view7"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:background="@drawable/ic_wave"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="202dp"
+        android:layout_height="111dp"
+        android:layout_marginTop="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view2"
+        app:srcCompat="@drawable/logo_muzz" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3">
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/poppinsbold"
-            android:gravity="center"
-            android:text="@string/registracija"
-            android:textColor="@color/black"
-            android:textSize="30sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:targetApi="jelly_bean" />
+        app:layout_constraintTop_toBottomOf="@+id/view7"
+        app:layout_constraintVertical_bias="0.285"
+        tools:layout_editor_absoluteX="0dp">
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayoutFullname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="30dp"
             android:layout_marginRight="30dp"
             android:hint="@string/vardas"
-            app:layout_constraintEnd_toEndOf="parent"
             android:textColorHint="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView">
+            app:layout_constraintTop_toTopOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/name"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="39dp"
+                android:layout_marginLeft="25dp"
+                android:padding="10dp"
+                android:background="@drawable/round_corner"
                 android:drawableRight="@drawable/ic_vardas"
                 android:fontFamily="@font/poppinsmedium"
                 tools:targetApi="jelly_bean" />
@@ -58,8 +76,8 @@
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:hint="El. paštas"
-            app:layout_constraintEnd_toEndOf="parent"
             android:textColorHint="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayoutFullname">
@@ -67,9 +85,12 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/email"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:drawableRight="@drawable/ic_email"
                 android:fontFamily="@font/poppinsmedium"
+                android:background="@drawable/round_corner"
+                android:layout_marginLeft="25dp"
+                android:layout_height="39dp"
+                android:padding="10dp"
                 tools:targetApi="jelly_bean" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -79,8 +100,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:textColorHint="@color/black"
             android:hint="Vartotojo vardas"
+            android:textColorHint="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -89,9 +110,12 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/username"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:drawableRight="@drawable/ic_userimg"
                 android:fontFamily="@font/poppinsmedium"
+                android:background="@drawable/round_corner"
+                android:layout_marginLeft="25dp"
+                android:layout_height="39dp"
+                android:padding="10dp"
                 tools:targetApi="jelly_bean" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -99,21 +123,25 @@
             android:id="@+id/textInputLayoutPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColorHint="@color/black"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:hint="Slaptažodis"
+            android:textColorHint="@color/black"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayoutUsername"
             app:passwordToggleEnabled="true"
             tools:layout_editor_absoluteX="0dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/password"
-                android:inputType="textPassword"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:drawableRight="@drawable/ic_passimg"
                 android:fontFamily="@font/poppinsmedium"
+                android:background="@drawable/round_corner"
+                android:inputType="textPassword"
+                android:layout_marginLeft="25dp"
+                android:layout_height="39dp"
+                android:padding="10dp
+"
                 tools:targetApi="jelly_bean" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -129,11 +157,15 @@
         <Button
             android:id="@+id/regbutton"
             style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
             android:layout_marginTop="36dp"
-            android:background="@color/butcolor"
+            android:fontFamily="@font/acme"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
             android:text="Registruotis"
+            android:background="@drawable/bt_corner"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/progress" />
@@ -145,13 +177,27 @@
             android:layout_marginTop="10dp"
             android:clickable="true"
             android:fontFamily="@font/poppinsmedium"
+            android:gravity="center"
             android:minHeight="48dp"
             android:text="Prisijungti"
-            android:gravity="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/regbutton"
             tools:targetApi="jelly_bean" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Registracija"
+        android:textColor="@color/darkgreen"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view7" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
