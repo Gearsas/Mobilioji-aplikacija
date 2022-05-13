@@ -45,9 +45,7 @@
         <entry key="..\:/Users/marty/Desktop/mobile/gay2/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/marty/Documents/GitHub/Mobilioji-aplikacija/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1365" />
         <entry key="..\:/Users/marty/Documents/GitHub/Mobilioji-aplikacija/app/src/main/res/layout/activity_dashboard.xml" value="0.27309782608695654" />
-        <entry key="..\:/Users/marty/Documents/GitHub/Mobilioji-aplikacija/app/src/main/res/layout/activity_exhibit_scan.xml" value="0.1947463768115942" />
         <entry key="..\:/Users/marty/Documents/GitHub/Mobilioji-aplikacija/app/src/main/res/layout/activity_exhibits_list.xml" value="0.27447916666666666" />
-        <entry key="..\:/Users/marty/Documents/GitHub/Mobilioji-aplikacija/app/src/main/res/layout/activity_landing_page.xml" value="0.18489583333333334" />
         <entry key="..\:/Users/marty/Documents/GitHub/Mobilioji-aplikacija/app/src/main/res/layout/activity_login.xml" value="0.2966485507246377" />
         <entry key="..\:/Users/marty/Documents/GitHub/Mobilioji-aplikacija/app/src/main/res/layout/activity_main.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/marty/Documents/GitHub/Mobilioji-aplikacija/app/src/main/res/layout/activity_mainpage.xml" value="0.27447916666666666" />
@@ -55,19 +53,21 @@
         <entry key="..\:/Users/marty/Documents/GitHub/Mobilioji-aplikacija/app/src/main/res/layout/activity_signup.xml" value="0.28125" />
         <entry key="..\:/Users/marty/Documents/GitHub/Mobilioji-aplikacija/app/src/main/res/layout/app_bar_main.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/marty/Documents/GitHub/Mobilioji-aplikacija/app/src/main/res/layout/content_main.xml" value="0.27447916666666666" />
-        <entry key="..\:/Users/marty/Documents/GitHub/Mobilioji-aplikacija/app/src/main/res/layout/nav_header.xml" value="0.1947463768115942" />
-        <entry key="..\:/Users/marty/Documents/GitHub/Mobilioji-aplikacija/app/src/main/res/menu/drawer_menu.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/rordi/Documents/GitHub/Mobilioji-aplikacija/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1515" />
         <entry key="..\:/Users/rordi/Documents/GitHub/Mobilioji-aplikacija/app/src/main/res/drawable/bt_corner.xml" value="0.154" />
+        <entry key="..\:/Users/rordi/Documents/GitHub/Mobilioji-aplikacija/app/src/main/res/drawable/custom_menu_item.xml" value="0.2545" />
         <entry key="..\:/Users/rordi/Documents/GitHub/Mobilioji-aplikacija/app/src/main/res/drawable/ic_email.xml" value="0.1515" />
         <entry key="..\:/Users/rordi/Documents/GitHub/Mobilioji-aplikacija/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1515" />
         <entry key="..\:/Users/rordi/Documents/GitHub/Mobilioji-aplikacija/app/src/main/res/drawable/ic_menu_camera.xml" value="0.154" />
         <entry key="..\:/Users/rordi/Documents/GitHub/Mobilioji-aplikacija/app/src/main/res/drawable/ic_menu_slideshow.xml" value="0.154" />
         <entry key="..\:/Users/rordi/Documents/GitHub/Mobilioji-aplikacija/app/src/main/res/drawable/ic_passimg.xml" value="0.154" />
+        <entry key="..\:/Users/rordi/Documents/GitHub/Mobilioji-aplikacija/app/src/main/res/drawable/ic_userimg.xml" value="0.2545" />
+        <entry key="..\:/Users/rordi/Documents/GitHub/Mobilioji-aplikacija/app/src/main/res/drawable/ic_vardas.xml" value="0.133" />
         <entry key="..\:/Users/rordi/Documents/GitHub/Mobilioji-aplikacija/app/src/main/res/drawable/ic_wave.xml" value="0.154" />
         <entry key="..\:/Users/rordi/Documents/GitHub/Mobilioji-aplikacija/app/src/main/res/drawable/round_corner.xml" value="0.154" />
         <entry key="..\:/Users/rordi/Documents/GitHub/Mobilioji-aplikacija/app/src/main/res/drawable/side_nav_bar.xml" value="0.154" />
         <entry key="..\:/Users/rordi/Documents/GitHub/Mobilioji-aplikacija/app/src/main/res/font/acme.xml" value="0.1410859341598974" />
+        <entry key="..\:/Users/rordi/Documents/GitHub/Mobilioji-aplikacija/app/src/main/res/layout/activity_about_us.xml" value="0.264" />
         <entry key="..\:/Users/rordi/Documents/GitHub/Mobilioji-aplikacija/app/src/main/res/layout/activity_exhibit_scan.xml" value="0.176" />
         <entry key="..\:/Users/rordi/Documents/GitHub/Mobilioji-aplikacija/app/src/main/res/layout/activity_exhibits_list.xml" value="0.16" />
         <entry key="..\:/Users/rordi/Documents/GitHub/Mobilioji-aplikacija/app/src/main/res/layout/activity_landing.xml" value="0.11842667806755024" />
@@ -84,8 +84,11 @@
         <entry key="..\:/Users/rordi/Documents/GitHub/Mobilioji-aplikacija/app/src/main/res/layout/fragment_map.xml" value="0.11842667806755024" />
         <entry key="..\:/Users/rordi/Documents/GitHub/Mobilioji-aplikacija/app/src/main/res/layout/fragment_scan.xml" value="0.11842667806755024" />
         <entry key="..\:/Users/rordi/Documents/GitHub/Mobilioji-aplikacija/app/src/main/res/layout/fragment_scanned.xml" value="0.11842667806755024" />
+        <entry key="..\:/Users/rordi/Documents/GitHub/Mobilioji-aplikacija/app/src/main/res/layout/item.xml" value="0.20521590423257802" />
+        <entry key="..\:/Users/rordi/Documents/GitHub/Mobilioji-aplikacija/app/src/main/res/layout/nav_header.xml" value="0.264" />
         <entry key="..\:/Users/rordi/Documents/GitHub/Mobilioji-aplikacija/app/src/main/res/layout/nav_header_main.xml" value="0.2" />
         <entry key="..\:/Users/rordi/Documents/GitHub/Mobilioji-aplikacija/app/src/main/res/menu/activity_main_drawer.xml" value="0.264" />
+        <entry key="..\:/Users/rordi/Documents/GitHub/Mobilioji-aplikacija/app/src/main/res/menu/drawer_menu.xml" value="0.4" />
         <entry key="..\:/Users/rordi/Documents/GitHub/Mobilioji-aplikacija/app/src/main/res/menu/main.xml" value="0.11842667806755024" />
       </map>
     </option>

@@ -9,12 +9,12 @@ import retrofit2.http.Query;
 
 public interface myapi {
 
-
-
     @POST("signup.php")
     Call<LoginResponse> adddata(@Query("name") String name, @Query("email") String email, @Query("username") String username, @Query("password") String password);
 
     @POST("login.php")
     Call<LoginResponse> userLogin(@Query("username") String username, @Query("password") String password);
 
+    @POST("getdata.php")
+    Call<dataResponse> getData(@Query("request") String request);
 }

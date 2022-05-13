@@ -46,15 +46,17 @@ public class Museum extends AppCompatActivity {
         });
     }
 
-    public void  openExhibitsList(){
-        Intent intent2 = new Intent(this, ExhibitsList.class ).putExtra("museum", getIntent().getStringExtra("museum"));
+    public void openExhibitsList() {
+        Intent intent2 = new Intent(this, ExhibitsList.class).putExtra("museum", getIntent().getStringExtra("museum"));
         startActivity(intent2);
     }
-    public void  openExhibitScan(){
-        Intent intent3 = new Intent(this, ExhibitScan.class ).putExtra("museum", getIntent().getStringExtra("museum"));
+
+    public void openExhibitScan() {
+        Intent intent3 = new Intent(this, ExhibitScan.class).putExtra("museum", getIntent().getStringExtra("museum"));
         startActivity(intent3);
     }
-    public void  openMainPage(){
+
+    public void openMainPage() {
         finish();
     }
 

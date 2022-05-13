@@ -1,33 +1,26 @@
 package com.example.myapplication;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.TextUtils;
-import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
-import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 public class SignUp extends AppCompatActivity {
     Button btn;
-    EditText name,uname,email,pwd;
-    String url="https://museumapp69.000webhostapp.com/";
+    EditText name, uname, email, pwd;
     TextView btnSignup;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,55 +34,41 @@ public class SignUp extends AppCompatActivity {
         btnSignup = findViewById(R.id.loginText);
 
 
-                btn =(Button) findViewById(R.id.regbutton);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        btn = (Button) findViewById(R.id.regbutton);
+        btn.setOnClickListener(view -> {
 
-                if(TextUtils.isEmpty(name.getText().toString()) || TextUtils.isEmpty(uname.getText().toString()) || TextUtils.isEmpty(pwd.getText().toString()) || TextUtils.isEmpty(email.getText().toString())){
-                    Toast.makeText(SignUp.this,"All fields Required", Toast.LENGTH_LONG).show();
-                }else{
-                    //proceed to reg
-                    process();
-                }
+            if (TextUtils.isEmpty(name.getText().toString()) || TextUtils.isEmpty(uname.getText().toString()) || TextUtils.isEmpty(pwd.getText().toString()) || TextUtils.isEmpty(email.getText().toString())) {
+                Toast.makeText(SignUp.this, "All fields Required", Toast.LENGTH_LONG).show();
+            } else {
+                //proceed to reg
+                process();
             }
         });
 
-        btnSignup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(SignUp.this, Login.class));
-            }
-        });
+        btnSignup.setOnClickListener(view -> startActivity(new Intent(SignUp.this, Login.class)));
     }
 
-    public void process(){
+    public void process() {
         Call<LoginResponse> loginResponseCall = ApiClient.getUserService().adddata(name.getText().toString(), email.getText().toString(), uname.getText().toString(), pwd.getText().toString());
         loginResponseCall.enqueue(new Callback<LoginResponse>() {
             @Override
-            public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
+            public void onResponse(@NonNull Call<LoginResponse> call, @NonNull Response<LoginResponse> response) {
 
-                if(response.isSuccessful()){
-                    Toast.makeText(SignUp.this,"Registration Successful", Toast.LENGTH_LONG).show();
+                if (response.isSuccessful()) {
+                    Toast.makeText(SignUp.this, "Registration Successful", Toast.LENGTH_LONG).show();
 
-                    new Handler().postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
+                    new Handler().postDelayed(() -> startActivity(new Intent(SignUp.this, Login.class)), 700);
 
-                            startActivity(new Intent(SignUp.this, Login.class));
-                        }
-                    },700);
-
-                }else{
-                    Toast.makeText(SignUp.this,"Reg Failed", Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(SignUp.this, "Reg Failed", Toast.LENGTH_LONG).show();
 
                 }
 
             }
 
             @Override
-            public void onFailure(Call<LoginResponse> call, Throwable t) {
-                Toast.makeText(SignUp.this,"Throwable "+t.getLocalizedMessage(), Toast.LENGTH_LONG).show();
+            public void onFailure(@NonNull Call<LoginResponse> call, @NonNull Throwable t) {
+                Toast.makeText(SignUp.this, "Throwable " + t.getLocalizedMessage(), Toast.LENGTH_LONG).show();
 
             }
         });

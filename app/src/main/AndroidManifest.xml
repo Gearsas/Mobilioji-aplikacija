@@ -15,8 +15,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication.NoActionBar">
         <activity
-            android:name=".landing_page"
+            android:name=".AboutUs"
             android:exported="false" />
+        <activity
+            android:name=".landing_page"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".ExhibitScan"
             android:exported="false" />
@@ -28,17 +37,10 @@
             android:exported="false" />
         <activity
             android:name=".MainPage"
-            android:exported="false"
-           />
+            android:exported="false" />
         <activity
             android:name=".Login"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="false"></activity>
         <activity
             android:name=".SignUp"
             android:exported="false" />
