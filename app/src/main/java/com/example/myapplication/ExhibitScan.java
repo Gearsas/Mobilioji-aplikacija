@@ -77,7 +77,7 @@ public class ExhibitScan extends AppCompatActivity implements NavigationView.OnN
             @Override
             public void onResponse(@NonNull Call<dataResponse> call, @NonNull Response<dataResponse> response) {
                 if (response.isSuccessful()) {
-                    dataResponse loginResponse = response.body();
+                    dataResponse ekspdata = response.body();
 
                     // TODO: sitoje vietoje gaunami rezultatai apie eksponata. cia yra pavyzdinis
                     //  kad nustato textview7 teksta getpav gaus pavadinima eksponato, data tai aprasyma,
@@ -88,8 +88,8 @@ public class ExhibitScan extends AppCompatActivity implements NavigationView.OnN
                     //  getextra() alvojau gal siaip reikes tai nereikia implementuot nebent ka sugalvosim
 
 
-                    assert loginResponse != null;
-                    txt.setText(loginResponse.getPav());
+                    assert ekspdata != null;
+                    txt.setText(ekspdata.getPav());
                 }
             }
 
