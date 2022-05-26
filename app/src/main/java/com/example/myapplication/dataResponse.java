@@ -8,11 +8,14 @@ public class dataResponse {
 
     private String extra;
 
+    private String museum;
 
-    public dataResponse(String pav, String data, String extra) {
+
+    public dataResponse(String pav, String data, String extra, String museum) {
         this.pav = pav;
         this.data = data;
         this.extra = extra;
+        this.museum = museum;
     }
 
     public String getPav() {
@@ -38,5 +41,10 @@ public class dataResponse {
     public void setExtra(String extra) {
         this.extra = extra;
     }
+
+    public String getMuseum() { return museum; }
+
+    public void setMuseum(String museum) { this.museum = museum; }
+
 }
 
