@@ -27,7 +27,8 @@ public class ExhibitScan extends AppCompatActivity implements NavigationView.OnN
 
     private DrawerLayout drawer;
     TextView txt;
-
+    TextView txt2;
+    TextView museumName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,13 +44,13 @@ public class ExhibitScan extends AppCompatActivity implements NavigationView.OnN
         NavigationView navigationView = findViewById(R.id.nav_view1);
         navigationView.setNavigationItemSelectedListener(this);
         toggle.syncState();
-        TextView museumName = findViewById(R.id.textView6);
-        museumName.setText(getIntent().getStringExtra("museum"));
 
         scanCode();
 
         // TODO: priskiria kintamajam textview7
         txt = findViewById(R.id.textView7);
+        txt2 = findViewById(R.id.textView8);
+        museumName = findViewById(R.id.textView6);
 
 
         button2.setOnClickListener(view -> scanCode());
@@ -90,6 +91,11 @@ public class ExhibitScan extends AppCompatActivity implements NavigationView.OnN
 
                     assert ekspdata != null;
                     txt.setText(ekspdata.getPav());
+                    txt2.setText(ekspdata.getData());
+                    museumName.setText(ekspdata.getMuseum());
+                    Intent intent = new Intent(ExhibitScan.this, activity_3dview.class);
+                    intent.putExtra("data", ekspdata.getExtra());
+                    startActivity(intent);
                 }
             }
 
@@ -110,9 +116,6 @@ public class ExhibitScan extends AppCompatActivity implements NavigationView.OnN
                 break;
             case R.id.nav_qr:
                 startActivity(new Intent(ExhibitScan.this, ExhibitScan.class));
-                break;
-            case R.id.nav_galery:
-                startActivity(new Intent(ExhibitScan.this, ExhibitsList.class));
                 break;
         }
         drawer.closeDrawer(GravityCompat.START);
