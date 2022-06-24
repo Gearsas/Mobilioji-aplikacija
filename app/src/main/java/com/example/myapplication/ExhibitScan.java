@@ -117,9 +117,6 @@ public class ExhibitScan extends AppCompatActivity implements NavigationView.OnN
             case R.id.nav_qr:
                 startActivity(new Intent(ExhibitScan.this, ExhibitScan.class));
                 break;
-            case R.id.nav_galery:
-                startActivity(new Intent(ExhibitScan.this, ExhibitsList.class));
-                break;
         }
         drawer.closeDrawer(GravityCompat.START);
         return true;

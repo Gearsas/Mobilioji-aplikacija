@@ -74,10 +74,16 @@ public class MainPage extends AppCompatActivity implements OnMapReadyCallback, N
                 LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
                 //float m = 16.00f;
                 mGooglemap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 12));
-                LatLng newlatlong = new LatLng(54.9038, 23.8924);
+                LatLng newlatlong = new LatLng(54.899894518643976, 23.91200059839978);
                 markerOptions.position(newlatlong);
-                markerOptions.title("pirmas muziejaus eksponatas");
+                markerOptions.title("Kauno karo muziejus");
                 googlemap.addMarker(markerOptions);
+
+                LatLng newlatlong1 = new LatLng(54.87782432728884, 23.890091688491392);
+                markerOptions.position(newlatlong1);
+                markerOptions.title("Kauno Aviacijos muziejus");
+                googlemap.addMarker(markerOptions);
+
             }
         });
 
@@ -95,9 +101,6 @@ public class MainPage extends AppCompatActivity implements OnMapReadyCallback, N
                 break;
             case R.id.nav_qr:
                 startActivity(new Intent(MainPage.this, ExhibitScan.class));
-                break;
-            case R.id.nav_galery:
-                startActivity(new Intent(MainPage.this, ExhibitsList.class));
                 break;
             case R.id.nav_about_us:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
