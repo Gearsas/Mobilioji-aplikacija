@@ -2,6 +2,8 @@
 
 Ideja: Sukurti programėlę muziejams, Vartotojai galės skenuoti muziejuose prie eksponatų esančius QR kodus, kurie atidarys programėlėje
 informacinį langą apie esantį objektą ir objekto 3D modelį.
+
+
 screenshots:
 
 ![289779961_1023660331617193_8095983240346542302_n](https://user-images.githubusercontent.com/79107324/175822695-f656bb0e-d2bb-4823-b966-aeaaf0af26c2.jpg)
