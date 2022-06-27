@@ -3,6 +3,9 @@
 Ideja: Sukurti programėlę muziejams, Vartotojai galės skenuoti muziejuose prie eksponatų esančius QR kodus, kurie atidarys programėlėje
 informacinį langą apie esantį objektą ir objekto 3D modelį.
 
+Aplikacija kurta naudojant android studio.
+
+Serverio failai database aplanke.
 
 screenshots:
 
