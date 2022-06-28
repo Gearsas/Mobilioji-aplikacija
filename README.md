@@ -5,7 +5,7 @@ Sukurti programėlę muziejams. Vartotojai gali skenuoti muziejuose prie ekspona
 informacinį langą apie esantį objektą ir objekto 3D modelį.
 
 Aplikacija kurta naudojant android studio.
-Vartotojai turi susikurti paskyra norint naudotis programėlę. Programėlė turi registracijos langą. Prisijungus vartotojai patenka į pagrindinį programėlės langą, žemėlapį su jų esama lokacija ir muzieju lokacijomis ir pavadinimais. Šone esančiame meniu galima naviguoti tarp žemėlapio, eksponato skaitymo ir "apie mus" langų.
+Vartotojai turi susikurti paskyra norint naudotis programėlę. Programėlė turi registracijos langą. Prisijungus vartotojai patenka į pagrindinį programėlės langą, žemėlapį su jų esama lokacija ir muzieju lokacijomis ir pavadinimais. Šone esančiame meniu galima naviguoti tarp žemėlapio, eksponato skaitymo ir apie langų.
 
 Naudojamas Google API žemėlapiams, muzieju ir vartotojo lokacijoms atvaizduoti.
 
