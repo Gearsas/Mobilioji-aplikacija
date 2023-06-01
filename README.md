@@ -1,5 +1,6 @@
 # Mobilioji-aplikacija
 
+Note: žemėlapis neveiks nes jums reikia Google maps api key, kaip gauti: https://www.youtube.com/watch?v=7TIAT5zlrmc&ab_channel=tutorialsEU
 Idėja: 
 Sukurti programėlę muziejams. Vartotojai gali skenuoti muziejuose prie eksponatų esančius QR kodus, kurie atidarys programėlėje
 informacinį langą apie esantį objektą ir objekto 3D modelį.
